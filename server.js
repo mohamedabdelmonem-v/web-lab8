@@ -62,3 +62,10 @@ app.get('/api/status', (req, res) => {
     uptimeSeconds: Math.floor(process.uptime())
   });
 });
+
+app.get('/api/headers', (req, res) => {
+  res.json({
+    userAgent: req.get('User-Agent') || 'Unknown',
+    accept: req.get('Accept') || 'Unknown'
+  });
+});
