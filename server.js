@@ -54,3 +54,11 @@ app.get('/old-page', (req, res) => {
 app.get('/api/courses', (req, res) => {
   res.json(COURSES);
 });
+
+app.get('/api/status', (req, res) => {
+  res.json({
+    status: 'OK',
+    nodeVersion: process.version,
+    uptimeSeconds: Math.floor(process.uptime())
+  });
+});
