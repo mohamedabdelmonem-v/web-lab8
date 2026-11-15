@@ -89,3 +89,8 @@ app.use((req, res) => {
   }
   res.status(404).type('text/plain').send('404 - Page Not Found');
 });
+
+// Start Server
+app.listen(PORT, () => {
+  console.log(`Server is running at http://localhost:${PORT}`);
+});
