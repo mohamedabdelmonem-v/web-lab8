@@ -77,3 +77,15 @@ app.post('/api/subscribe', (req, res) => {
 app.get('/api/admin', (req, res) => {
   res.status(403).json({ error: 'Forbidden' });
 });
+
+app.get('/api/stats', (req, res) => {
+  res.json({ requestsServed });
+});
+
+// --- 404 FALLBACK (Must be last, Express 5 compatible without '*' wildcard) ---
+app.use((req, res) => {
+  if (req.path.startsWith('/api')) {
+    return res.status(404).json({ error: 'Not found' });
+  }
+  res.status(404).type('text/plain').send('404 - Page Not Found');
+});
