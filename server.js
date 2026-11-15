@@ -15,3 +15,14 @@ const COURSES = [
   { id: 102, title: 'Modern Frontend Development', credits: 6 },
   { id: 103, title: 'Backend Systems with Node.js', credits: 6 }
 ];
+
+let requestsServed = 0;
+
+// --- MIDDLEWARE (Registered before routes) ---
+
+// 1. Request Logger
+app.use((req, res, next) => {
+  const timestamp = new Date().toISOString();
+  console.log(`[${timestamp}] ${req.method} ${req.url}`);
+  next();
+});
