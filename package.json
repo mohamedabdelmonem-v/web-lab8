@@ -1,0 +1,26 @@
+{
+  "name": "web-lab8",
+  "version": "1.0.0",
+  "description": "build a first back-end: a small Node.js and Express server with several routes, a front-end page served by the same server, and a request-logging middleware",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamedabdelmonem-v/web-lab8.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/mohamedabdelmonem-v/web-lab8/issues"
+  },
+  "homepage": "https://github.com/mohamedabdelmonem-v/web-lab8#readme",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
