@@ -36,3 +36,21 @@ app.use((req, res, next) => {
 // --- STATIC FILES ---
 // Serves index.html at GET / along with styles.css and app.js
 app.use(express.static(path.join(__dirname, 'public')))
+
+// --- ROUTES ---
+
+app.get('/hello', (req, res) => {
+  res.type('text/plain').send("Hello from Mohamed's server");
+});
+
+app.get('/robots.txt', (req, res) => {
+  res.type('text/plain').send('User-agent: *\nDisallow: /api/admin');
+});
+
+app.get('/old-page', (req, res) => {
+  res.redirect('/hello');
+});
+
+app.get('/api/courses', (req, res) => {
+  res.json(COURSES);
+});
