@@ -26,3 +26,13 @@ app.use((req, res, next) => {
   console.log(`[${timestamp}] ${req.method} ${req.url}`);
   next();
 });
+
+// 2. Request Counter
+app.use((req, res, next) => {
+  requestsServed += 1;
+  next();
+});
+
+// --- STATIC FILES ---
+// Serves index.html at GET / along with styles.css and app.js
+app.use(express.static(path.join(__dirname, 'public')))
