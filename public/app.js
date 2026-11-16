@@ -19,4 +19,8 @@ buttons.forEach((button) => {
         // Format JSON neatly with 2-space indentation
         const parsedJson = JSON.parse(rawText);
         responseDisplay.textContent = JSON.stringify(parsedJson, null, 2);
+      }catch {
+        // Fallback to plain text if response is not JSON
+        responseDisplay.textContent = rawText;
       }
+    }
