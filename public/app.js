@@ -13,3 +13,6 @@ buttons.forEach((button) => {
     try {
       const response = await fetch(url, { method });
       statusDisplay.textContent = `${response.status} ${response.statusText}`;
+
+      const rawText = await response.text();
+      try {
