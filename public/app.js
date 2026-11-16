@@ -4,3 +4,5 @@ const responseDisplay = document.getElementById('responseDisplay');
 
 buttons.forEach((button) => {
   button.addEventListener('click', async () => {
+    const url = button.getAttribute('data-url');
+    const method = button.getAttribute('data-method');
