@@ -23,4 +23,9 @@ buttons.forEach((button) => {
         // Fallback to plain text if response is not JSON
         responseDisplay.textContent = rawText;
       }
+    }catch (error) {
+      statusDisplay.textContent = 'Network Error';
+      responseDisplay.textContent = error.message;
     }
+  });
+});
