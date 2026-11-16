@@ -9,3 +9,7 @@ buttons.forEach((button) => {
 
     statusDisplay.textContent = 'Loading...';
     responseDisplay.textContent = '';
+
+    try {
+      const response = await fetch(url, { method });
+      statusDisplay.textContent = `${response.status} ${response.statusText}`;
