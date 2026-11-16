@@ -34,3 +34,10 @@ p {
 h2, h3 {
   margin-bottom: 12px;
 }
+
+.button-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
