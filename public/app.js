@@ -6,3 +6,6 @@ buttons.forEach((button) => {
   button.addEventListener('click', async () => {
     const url = button.getAttribute('data-url');
     const method = button.getAttribute('data-method');
+
+    statusDisplay.textContent = 'Loading...';
+    responseDisplay.textContent = '';
